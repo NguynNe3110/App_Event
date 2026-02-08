@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Sinh vien"
+                    android:layout_marginBottom="12dp"
+                    android:textAlignment="center"
+                    android:textSize="24dp"/>
+                <EditText
+                    android:id="@+id/edit_StudentId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="id sinh vien"
+                    android:inputType="number" />
+                <EditText
+                    android:id="@+id/edit_ClassId_Foreig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="id class"
+                    android:inputType="number" />
+
+                <EditText
+                    android:id="@+id/edit_StudentName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="name" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Class"
+                    android:layout_marginBottom="12dp"
+                    android:textAlignment="center"
+                    android:textSize="24dp"/>
+                <EditText
+                    android:id="@+id/edit_ClassId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nhap id"/>
+                <EditText
+                    android:id="@+id/edit_ClassName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="class name"/>
+                <TextView
+                    android:id="@+id/text_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="status..."
+                    android:textColor="#FF0000"
+                    android:textSize="11dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_addStudent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Add student"/>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_addClass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Add class"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_updStudent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Update student"/>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_updClass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Update class"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:weightSum="2"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btn_delStudent"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Delete student"/>
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:id="@+id/btn_delClass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="60dp"
+                android:text="Delete class"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_delAll"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="7dp"
+            android:text="Clear All" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:paddingTop="12dp"
+                android:textColor="#0030D7"
+                android:text="Class..."
+                android:textSize="18sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/text_infStudent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:text="Student"
+                    android:textColor="#FF0000"
+                    android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/text_infClass"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="12dp"
+                    android:textColor="#FF0000"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/edtUserId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="UserId (dùng cho Update/Delete/AddPost)"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User name" />
+
+        <EditText
+            android:id="@+id/edtUserEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="User email (v2 - migration)" />
+
+        <EditText
+            android:id="@+id/edtPostTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Post title" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAddUser"
+                android:layout_width="0dp"
+                android:layout_marginTop="24dp"
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:text="Add User" />
+
+            <Button
+                android:id="@+id/btnAddPost"
+                android:layout_width="0dp"
+                android:layout_marginTop="24dp"
+
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:text="Add Post" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnUpdateUser"
+                android:layout_width="0dp"
+                android:layout_marginTop="24dp"
+
+                android:layout_height="64dp"
+                android:layout_weight="1"
+                android:text="Update User" />
+
+            <Button
+                android:id="@+id/btnDeleteUser"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+
+                android:layout_weight="1"
+                android:text="Delete User" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnClearAll"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+
+            android:text="Clear All" />
+
+        <TextView
+            android:id="@+id/tvLog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:text="Log..."
+            android:textColor="#FF0000"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvUsers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:textColor="#0AFF00"
+            android:text="Users..."
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</ScrollView>
