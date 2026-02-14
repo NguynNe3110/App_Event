@@ -10,11 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.room.Room
 import com.uzuu.learn14_1_roomdb_foreignkey.data.local.AppDatabase
-import com.uzuu.learn14_1_roomdb_foreignkey.data.local.dao.ClassDao
-import com.uzuu.learn14_1_roomdb_foreignkey.data.local.dao.UserDao
 import com.uzuu.learn14_1_roomdb_foreignkey.data.repository.DbRepository
 import com.uzuu.learn14_1_roomdb_foreignkey.databinding.ActivityMainBinding
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
