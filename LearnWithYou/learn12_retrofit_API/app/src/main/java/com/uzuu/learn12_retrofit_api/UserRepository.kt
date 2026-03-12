@@ -7,6 +7,7 @@ class UserRepository(
     private val api: UserApi
 ) {
     suspend fun getUser(id: Int): ApiResult<User> {
+        // thay vì try catch có thể viết = safeCall để tối giản
         return try {
             // k cần imple nhưng vẫn gọi được getUser thuộc ìnterface UserApi
             //Retrofit tạo ra 1 object implement interface này LÚC APP ĐANG CHẠY

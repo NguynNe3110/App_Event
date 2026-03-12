@@ -7,6 +7,7 @@ import androidx.activity.ComponentActivity
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.uzuu.learn15_roomdb_retrofitapi.data.repository.UserRepositoryImpl
 import com.uzuu.learn15_roomdb_retrofitapi.data.local.AppDatabase
 import com.uzuu.learn15_roomdb_retrofitapi.data.remote.ApiClient
@@ -36,12 +37,17 @@ class MainActivity : ComponentActivity() {
         )
         viewModel = UserViewModel(repo)
 
+        binding.recycler.layoutManager = LinearLayoutManager(this)
         // setup RecyclerView
         binding.recycler.adapter = adapter
 
         // refresh button
         binding.btnRefresh.setOnClickListener {
             viewModel.refresh()
+        }
+
+        binding.btnDeleteAll.setOnClickListener {
+            viewModel.delete()
         }
 
         // observe uiState

@@ -4,4 +4,9 @@
         <item name="boxStrokeColor">@color/input_stroke_selector</item>
         <item name="boxStrokeWidth">2dp</item>
     </style>
+
+    <style name="FormFieldSpacing">
+        <item name="android:layout_marginTop">@dimen/space_m</item>
+    </style>
+
 </resources>

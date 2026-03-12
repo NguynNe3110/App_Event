@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:contentPadding="12dp"
+    app:strokeColor="@color/blue_border_8"
+    android:backgroundTint="@color/blue_surface_9"
+    android:layout_marginBottom="16dp"
+    app:cardElevation="6dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txt_startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="12:00"/>
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="1dp"
+                android:layout_margin="4dp"
+                android:layout_gravity="center"
+                android:background="@color/blue_primary_650"/>
+
+            <TextView
+                android:id="@+id/txt_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:text="12:00"/>
+            <Space
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_gravity="end"
+                android:text="Hà Nội"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.15">
+                <TextView
+                    android:id="@+id/txt_nameEvent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/blue_text_secondary"
+                    android:text="Vở hài kịch tên trộm gặp tên cướp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textSize="18sp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.85">
+                <TextView
+                    android:id="@+id/txt_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="● Đang bán vé"
+                    android:layout_gravity="end"
+                    android:textSize="16dp"
+                    android:textColor="#B851169E"
+                    android:gravity="end"/>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txt_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số vé:"
+            android:textSize="14sp"/>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

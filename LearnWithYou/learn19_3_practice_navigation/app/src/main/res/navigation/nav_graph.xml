@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskListFragment">
+
+    <fragment
+        android:id="@+id/taskListFragment"
+        android:name="com.uzuu.learn19_3_practice_navigation.feature.task.list.TaskListFragment"
+        android:label="Tasks">
+        <action
+            android:id="@+id/action_taskListFragment_to_taskDetailFragment"
+            app:destination="@id/taskDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskDetailFragment"
+        android:name="com.uzuu.learn19_3_practice_navigation.feature.task.detail.TaskDetailFragment"
+        android:label="Detail">
+
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_taskDetailFragment_to_taskEditFragment"
+            app:destination="@id/taskEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/taskEditFragment"
+        android:name="com.uzuu.learn19_3_practice_navigation.feature.task.edit.TaskEditFragment"
+        android:label="Edit">
+
+        <argument
+            android:name="taskId"
+            app:argType="integer" />
+    </fragment>
+</navigation>

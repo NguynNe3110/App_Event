@@ -14,6 +14,7 @@ import androidx.room.PrimaryKey
             onDelete = ForeignKey.CASCADE
         )
     ],
+    // tien, toi uu hieu suat doc bang
     indices = [
         Index(value = ["idClass"])
     ]

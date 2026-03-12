@@ -18,6 +18,7 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome Back"
@@ -27,6 +28,7 @@
             android:layout_marginBottom="8dp"/>
 
         <TextView
+            android:layout_gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login to continue"
@@ -69,12 +71,12 @@
             app:cornerRadius="16dp" />
 
         <TextView
+            style="@style/FormFieldSpacing"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Don't have an account? Sign up"
             android:textSize="13sp"
             android:textColor="#7A7A7A"
-            android:layout_marginTop="24dp"
             android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>

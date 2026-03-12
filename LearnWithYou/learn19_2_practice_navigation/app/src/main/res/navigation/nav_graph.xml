@@ -1,0 +1,32 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.uzuu.learn19_2_practice_navigation.feature.list.ListFragment"
+        android:label="List">
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.uzuu.learn19_2_practice_navigation.feature.detail.DetailFragment"
+        android:label="Detail">
+        <argument
+            android:name="itemId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_detailFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="com.uzuu.learn19_2_practice_navigation.feature.confirm.ConfirmFragment"
+        android:label="Confirm" />
+</navigation>

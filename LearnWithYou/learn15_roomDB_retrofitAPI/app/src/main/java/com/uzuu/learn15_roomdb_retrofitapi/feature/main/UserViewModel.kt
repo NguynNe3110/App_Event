@@ -2,6 +2,7 @@ package com.uzuu.learn15_roomdb_retrofitapi.feature.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.uzuu.learn15_roomdb_retrofitapi.core.result.ApiResult
 import com.uzuu.learn15_roomdb_retrofitapi.data.repository.UserRepositoryImpl
 import com.uzuu.learn15_roomdb_retrofitapi.domain.repository.UserRepository
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -17,6 +18,10 @@ class UserViewModel(
     val uiState = _uiState.asStateFlow()
 
     init {
+        listenToDb()
+    }
+
+    fun listenToDb(){
         // Luồng hiển thị: DB -> UI
         viewModelScope.launch {
             repo.users.collect { list ->
@@ -24,17 +29,25 @@ class UserViewModel(
             }
         }
     }
-
     fun refresh() {
         viewModelScope.launch {
             _uiState.update { it.copy(isLoading = true, error = null) }
-            try {
-                repo.refreshUsers() // API -> DB
-                // Không cần set users ở đây! DB tự phát list mới qua repo.users
-                _uiState.update { it.copy(isLoading = false) }
-            } catch (e: Exception) {
-                _uiState.update { it.copy(isLoading = false, error = e.message ?: "Unknown error") }
+            when(val result = repo.refreshUsers()) { // API -> DB, tra ve true false
+                is ApiResult.Success -> {
+                    // Không cần set users ở đây! DB tự phát list mới qua repo.users
+                    _uiState.update { it.copy(isLoading = false) }
+
+                }
+                is ApiResult.Error -> {
+                    _uiState.update { it.copy(isLoading = false, error = result.message ?: "Unknown error") }
+                }
             }
+        }
+    }
+
+    fun delete() {
+        viewModelScope.launch {
+            repo.deleteAll()
         }
     }
 }

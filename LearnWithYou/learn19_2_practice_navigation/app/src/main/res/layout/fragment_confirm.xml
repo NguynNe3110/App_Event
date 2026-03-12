@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvConfirm"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm..." />
+
+    <Button
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIRM BORROW"
+        android:layout_marginTop="12dp"/>
+
+    <Button
+        android:id="@+id/btnBackToList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back to List"
+        android:layout_marginTop="8dp"/>
+</LinearLayout>
