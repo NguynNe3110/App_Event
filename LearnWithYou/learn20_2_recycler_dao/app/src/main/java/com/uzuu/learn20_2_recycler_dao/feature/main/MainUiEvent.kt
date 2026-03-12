@@ -1,0 +1,3 @@
+package com.uzuu.learn20_2_recycler_dao.feature.main
+
+data class MainUiEvent()

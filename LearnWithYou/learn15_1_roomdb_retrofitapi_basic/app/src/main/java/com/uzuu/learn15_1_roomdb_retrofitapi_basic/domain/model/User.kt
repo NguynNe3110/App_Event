@@ -1,0 +1,3 @@
+package com.uzuu.learn15_1_roomdb_retrofitapi_basic.domain.model
+
+data class User()
