@@ -1,4 +1,4 @@
-package com.uzuu.customer.feature.middle.history
+package com.uzuu.customer.feature.middle.ticket
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,12 +9,13 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.uzuu.customer.databinding.FragmentHistoryBinding
+import com.uzuu.customer.databinding.FragmentTicketBinding
 import kotlinx.coroutines.launch
 
-class HistoryFragment:Fragment() {
+class TicketFragment: Fragment() {
 
 
-    private var _binding : FragmentHistoryBinding?= null
+    private var _binding : FragmentTicketBinding?= null
 
     val binding get() = _binding!!
 
@@ -23,7 +24,7 @@ class HistoryFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        _binding = FragmentTicketBinding.inflate(inflater, container, false)
         return binding.root
     }
 

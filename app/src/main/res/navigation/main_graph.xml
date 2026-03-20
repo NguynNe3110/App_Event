@@ -12,8 +12,6 @@
             android:name="usernameStr"
             app:argType="string"
             android:defaultValue=""/>
-
-        <!-- Action sang màn chi tiết sự kiện -->
         <action
             android:id="@+id/action_homeFragment_to_eventDetail"
             app:destination="@id/eventDetailFragment" />
@@ -25,9 +23,9 @@
         android:label="Cart"/>
 
     <fragment
-        android:id="@+id/historyFragment"
-        android:name="com.uzuu.customer.feature.middle.history.HistoryFragment"
-        android:label="History"/>
+        android:id="@+id/ticketFragment"
+        android:name="com.uzuu.customer.feature.middle.ticket.TicketFragment"
+        android:label="Ticket"/>
 
     <fragment
         android:id="@+id/personalFragment"
@@ -36,6 +34,9 @@
         <action
             android:id="@+id/action_personal_to_editInfo"
             app:destination="@id/personalInfoFragment"/>
+        <action
+            android:id="@+id/action_personal_to_history"
+            app:destination="@id/historyFragment"/>
     </fragment>
 
     <fragment
@@ -43,7 +44,6 @@
         android:name="com.uzuu.customer.feature.middle.personal.PersonalInfoFragment"
         android:label="Chỉnh sửa thông tin"/>
 
-    <!-- Màn hình chi tiết sự kiện -->
     <fragment
         android:id="@+id/eventDetailFragment"
         android:name="com.uzuu.customer.feature.middle.home.EventDetailFragment"
@@ -52,5 +52,10 @@
             android:name="event"
             app:argType="com.uzuu.customer.domain.model.Event" />
     </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.uzuu.customer.feature.middle.personal.history.HistoryFragment"
+        android:label="Lịch sử đơn hàng"/>
 
 </navigation>
