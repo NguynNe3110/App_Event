@@ -8,7 +8,6 @@
     android:orientation="vertical"
     android:background="@color/blue_bg_2">
 
-    <!-- Header -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,7 +23,6 @@
             android:gravity="center_vertical"
             android:paddingHorizontal="8dp">
 
-            <!-- Back button dùng text arrow -->
             <TextView
                 android:id="@+id/btn_back"
                 android:layout_width="40dp"
@@ -49,7 +47,6 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Loading -->
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
@@ -58,19 +55,17 @@
         android:layout_marginTop="24dp"
         android:visibility="gone"/>
 
-    <!-- Empty -->
     <TextView
         android:id="@+id/tv_empty"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="Chưa có đơn hàng nào 📋"
+        android:text="Chưa có đơn hàng nào"
         android:textSize="18sp"
         android:textColor="@color/blue_text_secondary"
         android:visibility="gone"/>
 
-    <!-- List -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_orders"
         android:layout_width="match_parent"

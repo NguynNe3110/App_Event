@@ -31,7 +31,7 @@ class OrderAdapter : ListAdapter<Order, OrderAdapter.VH>(DIFF) {
         val order = getItem(position)
         with(holder.binding) {
             tvOrderId.text        = "Đơn #${order.id}"
-            tvOrderDate.text      = order.orderDate.take(10)   // "YYYY-MM-DD"
+            tvOrderDate.text      = order.orderDate.take(10)
             tvTotalAmount.text    = "${fmt.format(order.totalAmount.toLong())}đ"
             tvPaymentMethod.text  = order.paymentMethod
 

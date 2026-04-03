@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="#0D1117">
 
-    <!-- ── Camera preview chiếm toàn màn hình ─────────────────────────────── -->
     <androidx.camera.view.PreviewView
         android:id="@+id/preview_view"
         android:layout_width="0dp"
@@ -16,8 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- ── Overlay tối 4 góc (tạo hiệu ứng khung quét) ──────────────────── -->
-    <!-- Top bar -->
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -27,7 +24,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/view_scan_box"/>
 
-    <!-- Bottom bar -->
     <View
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -37,7 +33,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <!-- Hộp quét trong suốt với viền bo -->
     <View
         android:id="@+id/view_scan_box"
         android:layout_width="260dp"
@@ -49,7 +44,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_bias="0.42"/>
 
-    <!-- ── Header: tên user + logout ─────────────────────────────────────── -->
     <LinearLayout
         android:id="@+id/layout_header"
         android:layout_width="0dp"
@@ -87,7 +81,6 @@
             app:cornerRadius="8dp"/>
     </LinearLayout>
 
-    <!-- ── Hint text bên dưới hộp quét ──────────────────────────────────── -->
     <TextView
         android:id="@+id/txt_scan_hint"
         android:layout_width="0dp"
@@ -102,7 +95,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/card_bottom"/>
 
-    <!-- Loading spinner -->
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="36dp"
@@ -114,7 +106,6 @@
         app:layout_constraintStart_toStartOf="@+id/view_scan_box"
         app:layout_constraintEnd_toEndOf="@+id/view_scan_box"/>
 
-    <!-- ── Bottom card: nhập thủ công + kết quả ─────────────────────────── -->
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_bottom"
         android:layout_width="0dp"
@@ -132,7 +123,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Nhập tay -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -174,7 +164,6 @@
                     app:cornerRadius="10dp"/>
             </LinearLayout>
 
-            <!-- Card kết quả (ẩn ban đầu) -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_result"
                 android:layout_width="match_parent"
@@ -190,7 +179,6 @@
                     android:orientation="vertical"
                     android:padding="14dp">
 
-                    <!-- Icon + trạng thái -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -214,7 +202,6 @@
                             android:textStyle="bold"/>
                     </LinearLayout>
 
-                    <!-- Tên sự kiện -->
                     <TextView
                         android:id="@+id/txt_result_event_name"
                         android:layout_width="match_parent"
@@ -225,7 +212,6 @@
                         android:textStyle="bold"
                         android:textColor="#0D47A1"/>
 
-                    <!-- Loại vé -->
                     <TextView
                         android:id="@+id/txt_result_ticket_type"
                         android:layout_width="match_parent"
@@ -235,7 +221,6 @@
                         android:textSize="13sp"
                         android:textColor="#555555"/>
 
-                    <!-- Mã vé -->
                     <TextView
                         android:id="@+id/txt_result_code"
                         android:layout_width="match_parent"
@@ -246,7 +231,6 @@
                         android:fontFamily="monospace"
                         android:textColor="#333333"/>
 
-                    <!-- Thời gian dùng -->
                     <TextView
                         android:id="@+id/txt_result_used_at"
                         android:layout_width="match_parent"
@@ -259,7 +243,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Nút quét tiếp -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_rescan"
                 style="@style/Widget.Material3.Button.OutlinedButton"

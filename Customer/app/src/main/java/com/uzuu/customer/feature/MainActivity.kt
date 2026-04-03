@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
 
         container = AppContainer(applicationContext)
 
-        // Nếu đã có token → bỏ qua login, vào thẳng Home
         if (SessionManager.getToken() != null) {
             val navHostFragment =
                 supportFragmentManager.findFragmentById(R.id.root_nav_host) as NavHostFragment
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.mainFragment,
                 null,
                 NavOptions.Builder()
-                    .setPopUpTo(R.id.root_graph, true)  // xóa toàn bộ backstack
+                    .setPopUpTo(R.id.root_graph, true)
                     .build()
             )
         }

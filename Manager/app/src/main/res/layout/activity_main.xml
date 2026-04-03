@@ -5,10 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--
-        NavHostFragment chiếm toàn màn hình.
-        ID "root_nav_host" phải khớp với findFragmentById() trong MainActivity.
-    -->
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/root_nav_host"
         android:name="androidx.navigation.fragment.NavHostFragment"

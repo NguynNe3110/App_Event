@@ -12,7 +12,6 @@ import java.util.Locale
 
 class CategoryTicketAdapter : ListAdapter<CategoryTicket, CategoryTicketAdapter.VH>(DIFF) {
 
-    // Map lưu số lượng vé người dùng đã chọn: ticketTypeId → quantity
     private val quantities = mutableMapOf<Long, Int>()
 
     companion object {
@@ -61,11 +60,9 @@ class CategoryTicketAdapter : ListAdapter<CategoryTicket, CategoryTicketAdapter.
         }
     }
 
-    /** Trả về các vé đã chọn: Map<ticketTypeId, quantity> */
     fun getSelectedQuantities(): Map<Long, Int> =
         quantities.filter { it.value > 0 }
 
-    /** Reset tất cả số lượng */
     fun resetQuantities() {
         quantities.clear()
         notifyDataSetChanged()

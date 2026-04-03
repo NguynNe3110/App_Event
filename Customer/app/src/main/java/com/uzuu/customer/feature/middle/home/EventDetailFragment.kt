@@ -52,7 +52,6 @@ class EventDetailFragment : Fragment() {
         binding.txtSaleEnd.text         = "Kết thúc bán: ${event.saleEndDate ?: "Chưa xác định"}"
         binding.txtDescription.text     = event.description?.ifBlank { "Chưa có mô tả." } ?: "Chưa có mô tả."
 
-        // Trạng thái + màu
         val (statusLabel, statusColor) = when (event.status) {
             "PENDING"    -> "● Sắp diễn ra"  to requireContext().getColor(com.uzuu.customer.R.color.event_upcoming)
             "ON_SALE"    -> "● Đang bán vé"  to requireContext().getColor(com.uzuu.customer.R.color.event_on_sale)
@@ -72,11 +71,7 @@ class EventDetailFragment : Fragment() {
         }
         ticketAdapter.submitList(event.ticketTypes)
 
-        // Nút mua ngay → mở bottom sheet
         binding.btnBuyNow.setOnClickListener {
-            // Quay lại và mở bottom sheet từ HomeFragment
-            // Cách đơn giản: pop back thì HomeFragment sẽ tự mở lại bottom sheet
-            // Ở đây ta dùng cách truyền result về HomeFragment
             val result = Bundle().apply { putParcelable("open_bottom_sheet", event) }
             parentFragmentManager.setFragmentResult("event_detail_result", result)
             findNavController().popBackStack()

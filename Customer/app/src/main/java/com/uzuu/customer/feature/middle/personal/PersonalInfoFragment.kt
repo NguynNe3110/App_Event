@@ -20,11 +20,7 @@ class PersonalInfoFragment : Fragment() {
     private var _binding: FragmentPersonalInfoBinding? = null
     val binding get() = _binding!!
 
-    // Dùng chung ViewModel với PersonalFragment thông qua cùng Factory
-    // (Không dùng activityViewModels vì scope khác NavGraph)
-    private val viewModel: PersonalViewModel by viewModels(
-        ownerProducer = { requireParentFragment() }
-    ) {
+    private val viewModel: PersonalViewModel by viewModels {
         PersonalFactory((requireActivity() as MainActivity).container.userRepo)
     }
 
@@ -38,22 +34,10 @@ class PersonalInfoFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        prefillFields()
+        viewModel.init()
         setupSaveButton()
         observeState()
         observeEvent()
-    }
-
-    // Điền sẵn thông tin hiện tại vào các ô
-    private fun prefillFields() {
-        val state = viewModel.state.value
-        binding.edtEmail.setText(state.email)
-        binding.edtFullName.setText(state.fullName)
-        binding.edtPhoneNumber.setText(state.phone)
-        binding.edtAddress.setText(state.address)
-        // username: read-only, chỉ hiển thị
-        binding.edtUsername.setText(state.username)
-        binding.edtUsername.isEnabled = false
     }
 
     private fun setupSaveButton() {
@@ -77,7 +61,15 @@ class PersonalInfoFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.state.collect { state ->
-                    // Disable form khi đang loading
+
+                    if (!state.isLoading) {
+                        binding.edtUsername.setText(state.username)
+                        binding.edtEmail.setText(state.email)
+                        binding.edtFullName.setText(state.fullName)
+                        binding.edtPhoneNumber.setText(state.phone)
+                        binding.edtAddress.setText(state.address)
+                    }
+
                     val editable = !state.isLoading
                     binding.edtEmail.isEnabled       = editable
                     binding.edtFullName.isEnabled    = editable
@@ -85,7 +77,8 @@ class PersonalInfoFragment : Fragment() {
                     binding.edtAddress.isEnabled     = editable
                     binding.edtPassword.isEnabled    = editable
                     binding.btnRegister.isEnabled    = editable
-                    binding.progress.visibility      = if (state.isLoading) View.VISIBLE else View.GONE
+                    binding.progress.visibility = if (state.isLoading) View.VISIBLE else View.GONE
+
                 }
             }
         }
@@ -98,7 +91,6 @@ class PersonalInfoFragment : Fragment() {
                     when (event) {
                         is PersonalUiEvent.Toast -> {
                             Toast.makeText(context, event.message, Toast.LENGTH_SHORT).show()
-                            // Nếu thành công → quay lại Personal
                             if (event.message.contains("thành công")) {
                                 findNavController().popBackStack()
                             }

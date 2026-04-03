@@ -165,6 +165,7 @@ class HomeFragment : Fragment() {
                     withContext(Dispatchers.Main) {
                         Toast.makeText(requireContext(), result.message, Toast.LENGTH_SHORT).show()
                     }
+                    throw Exception(result.message)
                 }
             }
         ).show(parentFragmentManager, "event_bottom_sheet")

@@ -3,10 +3,6 @@ package com.uzuu.admin.data.session
 import android.content.Context
 import android.content.SharedPreferences
 
-/**
- * Singleton lưu token & username vào SharedPreferences.
- * Gọi SessionManager.init(context) một lần duy nhất trong MainActivity.onCreate().
- */
 object SessionManager {
 
     private const val PREF_NAME    = "uzuu_admin_prefs"
@@ -15,7 +11,6 @@ object SessionManager {
 
     private lateinit var prefs: SharedPreferences
 
-    /** Phải gọi trước khi dùng bất kỳ hàm nào khác */
     fun init(context: Context) {
         prefs = context.applicationContext
             .getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)

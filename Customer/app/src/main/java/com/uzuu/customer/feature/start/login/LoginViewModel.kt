@@ -41,6 +41,7 @@ class LoginViewModel(
     fun onClickLogin(user: String, pass: String) {
         viewModelScope.launch {
             _loginState.update { it.copy(isLoading = true) }
+            _loginEvent.tryEmit(LoginUiEvent.Loading)
             delay(400)
 
             if (user.isBlank() || pass.isBlank()) {
@@ -59,12 +60,14 @@ class LoginViewModel(
                     println("DEBUG [LoginVM] saved token + username=$user")
 
                     _loginState.update { it.copy(isLoading = false) }
+                    _loginEvent.tryEmit(LoginUiEvent.Success)
                     _loginEvent.tryEmit(LoginUiEvent.Toast("Đăng nhập thành công"))
                     _loginEvent.tryEmit(LoginUiEvent.navigateHome)
                 }
                 is ApiResult.Error -> {
                     println("DEBUG [LoginVM] login FAILED: ${r.message}")
                     _loginState.update { it.copy(isLoading = false) }
+                    _loginEvent.tryEmit(LoginUiEvent.Error)
                     _loginEvent.tryEmit(LoginUiEvent.Toast(r.message))
                 }
             }

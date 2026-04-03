@@ -7,10 +7,6 @@ import retrofit2.http.Query
 
 interface CheckInApi {
 
-    /**
-     * POST /tickets/check-in?ticketCode=XXX
-     * Quét mã vé để check-in (ban tổ chức / admin)
-     */
     @POST("tickets/check-in")
     suspend fun checkIn(
         @Query("ticketCode") ticketCode: String

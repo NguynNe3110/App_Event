@@ -16,7 +16,6 @@ class UserRepositoryImpl(
     private val userRemote: UserRemoteDataSource
 ) : UserRepository {
 
-    // ── Remote ───────────────────────────────────────────────────────────────
     override suspend fun getMyInfo(): ApiResult<UserResponseDto> =
         safeApiCall {
             val response = userRemote.getMyInfo()
@@ -40,7 +39,6 @@ class UserRepositoryImpl(
             }
         }
 
-    // ── Local (Room) ──────────────────────────────────────────────────────────
     override val users: Flow<List<Users>>
         get() = TODO("Not yet implemented")
 

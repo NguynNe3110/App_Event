@@ -17,7 +17,6 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <!-- Tên vé + giá -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -42,7 +41,6 @@
 
             </LinearLayout>
 
-            <!-- Nút chỉnh số lượng -->
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

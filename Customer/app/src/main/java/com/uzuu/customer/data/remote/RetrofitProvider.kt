@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitProvider {
-    private const val BASE_URL = "http://192.168.1.6:8082/event-mng/"
+    private const val BASE_URL = "http://192.168.0.110:8080/event-mng/"
 
     //okhttp
 
@@ -22,7 +22,7 @@ object RetrofitProvider {
             level = HttpLoggingInterceptor.Level.BODY
         }
         OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor()) // thêm dòng này
+            .addInterceptor(AuthInterceptor())
             .addInterceptor(logger)
             .build()
     }
@@ -49,6 +49,6 @@ object RetrofitProvider {
 
     val cartApi: CartApi by lazy { retrofit.create(CartApi::class.java) }
     val userApi: UserApi by lazy { retrofit.create(UserApi::class.java) }
-    val myTicketApi: MyTicketApi by lazy { retrofit.create(MyTicketApi::class.java) }   // ← thêm
+    val myTicketApi: MyTicketApi by lazy { retrofit.create(MyTicketApi::class.java) }
     val orderApi: OrderApi by lazy { retrofit.create(OrderApi::class.java) }
 }

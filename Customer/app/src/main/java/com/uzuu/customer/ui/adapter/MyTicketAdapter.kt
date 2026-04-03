@@ -37,7 +37,6 @@ class MyTicketAdapter(
             tvTicketTypeName.text = ticket.ticketTypeName
             tvTicketCode.text     = "Mã: ${ticket.ticketCode}"
 
-            // Badge trạng thái
             val (label, colorRes) = when (ticket.status) {
                 "VALID"   -> "● Hợp lệ"    to com.uzuu.customer.R.color.event_completed
                 "USED"    -> "● Đã dùng"   to com.uzuu.customer.R.color.blue_text_secondary

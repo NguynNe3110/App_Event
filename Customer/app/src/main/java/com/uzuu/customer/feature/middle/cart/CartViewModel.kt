@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 
 class CartViewModel(
     private val cartRepo: CartRepository,
-    private val orderRepo: OrderRepository      // ← thêm
+    private val orderRepo: OrderRepository
 ) : ViewModel() {
 
     private val _cartState = MutableStateFlow(CartUiState())
@@ -85,8 +85,6 @@ class CartViewModel(
                     _cartState.update { it.copy(isLoading = false) }
                     _cartEvent.emit(CartUiEvent.Toast("🎉 Đặt hàng thành công!"))
                     _cartEvent.emit(CartUiEvent.CheckoutSuccess)
-                    // CheckoutSuccess → CartFragment gọi loadCart()
-                    // Server đã clear cart sau checkout nên list sẽ rỗng
                 }
                 is ApiResult.Error -> {
                     _cartState.update { it.copy(isLoading = false) }

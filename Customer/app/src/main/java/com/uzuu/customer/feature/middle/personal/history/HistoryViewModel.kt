@@ -24,7 +24,6 @@ class HistoryViewModel(
     private var currentPage = 1
 
     fun loadOrders() {
-        // Tránh load nhiều lần
         if (_state.value.isLoading) return
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }

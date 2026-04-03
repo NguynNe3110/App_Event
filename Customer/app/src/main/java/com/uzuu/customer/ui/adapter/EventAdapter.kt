@@ -23,15 +23,11 @@ class EventAdapter(
             override fun areContentsTheSame(oldItem: Event, newItem: Event) = oldItem == newItem
         }
 
-        /**
-         * Server trả về URL dạng http://localhost:8080/...
-         * Trên điện thoại thực thì localhost không trỏ được tới máy tính.
-         * Hàm này thay thế "localhost" bằng IP thực của máy chủ.
-         */
+
         fun fixImageUrl(url: String?): String? {
             if (url.isNullOrBlank()) return null
-            return url.replace("http://localhost", "http://192.168.1.9")
-                .replace("https://localhost", "http://192.168.1.9")
+            return url.replace("http://localhost", "http://192.168.0.110")
+                .replace("https://localhost", "http://192.168.0.110")
         }
     }
 

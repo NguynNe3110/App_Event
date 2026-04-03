@@ -31,12 +31,10 @@ class MainFragment : Fragment() {
             childFragmentManager.findFragmentById(R.id.main_nav_host) as NavHostFragment
         val navController = navHostFragment.navController
 
-        // Thay vì setupWithNavController trực tiếp, override listener
         binding.bottomNav.setOnItemSelectedListener { item ->
             val navOptions = NavOptions.Builder()
                 .setLaunchSingleTop(true)
                 .setRestoreState(false)
-                // Pop hết về start destination của graph trước khi navigate
                 .setPopUpTo(navController.graph.startDestinationId, inclusive = false, saveState = false)
                 .build()
             return@setOnItemSelectedListener try {
@@ -47,7 +45,6 @@ class MainFragment : Fragment() {
             }
         }
 
-        // Vẫn sync highlight icon với navController
         navController.addOnDestinationChangedListener { _, destination, _ ->
             binding.bottomNav.menu.findItem(destination.id)?.isChecked = true
         }

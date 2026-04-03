@@ -7,7 +7,7 @@ import com.uzuu.customer.domain.repository.OrderRepository
 
 class CartFactory(
     private val cartRepo: CartRepository,
-    private val orderRepo: OrderRepository      // ← thêm
+    private val orderRepo: OrderRepository
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CartViewModel::class.java)) {

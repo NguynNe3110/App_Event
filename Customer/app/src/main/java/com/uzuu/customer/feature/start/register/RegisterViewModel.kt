@@ -59,7 +59,7 @@ class RegisterViewModel(
                     _registerEvent.emit(RegisterUiEvent.Toast("Đăng kí thành công!"))
                     println("DEBUG in third register(VM):d")
 
-                    _registerEvent.emit(RegisterUiEvent.Toast("Tự động chuyển hướng sau 1 giây!"))
+                    _registerEvent.emit(RegisterUiEvent.Toast("Đã tự động chuyển hướng!"))
                     delay(300)
                     _registerEvent.emit(RegisterUiEvent.navigateToLogin(user))
                 }

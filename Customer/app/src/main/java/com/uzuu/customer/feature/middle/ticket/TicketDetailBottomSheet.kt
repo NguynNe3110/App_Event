@@ -49,11 +49,6 @@ class TicketDetailBottomSheet(
         binding.tvStatus.setTextColor(requireContext().getColor(colorRes))
     }
 
-    /**
-     * qrCode từ server là chuỗi base64 của ảnh QR.
-     * Decode ra Bitmap rồi set vào ImageView.
-     * Nếu server trả về URL thay vì base64 → dùng Glide làm fallback.
-     */
     private fun displayQrCode() {
         val qrString = ticket.qrCode
         if (qrString.isBlank()) {
@@ -70,7 +65,6 @@ class TicketDetailBottomSheet(
             val bitmap: Bitmap = BitmapFactory.decodeByteArray(bytes, 0, bytes.size)
             binding.imgQr.setImageBitmap(bitmap)
         } catch (e: Exception) {
-            // Fallback: nếu không phải base64 (ví dụ server trả URL)
             try {
                 com.bumptech.glide.Glide.with(this)
                     .load(qrString)

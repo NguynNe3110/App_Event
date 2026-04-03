@@ -33,7 +33,6 @@ object SessionManager {
         prefs.edit()
             .remove(KEY_TOKEN)
             .remove(KEY_USERNAME)
-            // Avatar sẽ giữ lại (tùy ý)
             .apply()
     }
 }

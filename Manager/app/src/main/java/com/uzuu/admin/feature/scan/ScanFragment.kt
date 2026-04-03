@@ -30,6 +30,7 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
+@OptIn(androidx.camera.core.ExperimentalGetImage::class)
 class ScanFragment : Fragment() {
 
     private var _binding: FragmentScanBinding? = null
@@ -41,7 +42,6 @@ class ScanFragment : Fragment() {
 
     private lateinit var cameraExecutor: ExecutorService
 
-    // ── Permission launcher ───────────────────────────────────────────────────
     private val requestPermissionLauncher = registerForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { isGranted ->
@@ -68,7 +68,6 @@ class ScanFragment : Fragment() {
         checkCameraPermission()
     }
 
-    // ── Camera permission ─────────────────────────────────────────────────────
     private fun checkCameraPermission() {
         when {
             ContextCompat.checkSelfPermission(
@@ -79,7 +78,6 @@ class ScanFragment : Fragment() {
         }
     }
 
-    // ── CameraX + ML Kit QR ───────────────────────────────────────────────────
     private fun startCamera() {
         val cameraProviderFuture = ProcessCameraProvider.getInstance(requireContext())
 
@@ -135,7 +133,6 @@ class ScanFragment : Fragment() {
         }, ContextCompat.getMainExecutor(requireContext()))
     }
 
-    // ── Buttons ───────────────────────────────────────────────────────────────
     private fun setupButtons() {
         // Nhập tay mã vé
         binding.btnManualCheckIn.setOnClickListener {
@@ -156,7 +153,6 @@ class ScanFragment : Fragment() {
         }
     }
 
-    // ── Observe state ─────────────────────────────────────────────────────────
     private fun observeState() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -171,9 +167,9 @@ class ScanFragment : Fragment() {
 
                     // Scanner overlay hint
                     binding.txtScanHint.text = when {
-                        state.isLoading      -> "⏳ Đang kiểm tra vé..."
-                        !state.isScanEnabled -> "✅ Xong — chờ quét tiếp..."
-                        else                 -> "📷 Hướng camera vào mã QR trên vé"
+                        state.isLoading      -> "Đang kiểm tra vé..."
+                        !state.isScanEnabled -> "Xong — chờ quét tiếp..."
+                        else                 -> "Hướng camera vào mã QR trên vé"
                     }
 
                     // Card kết quả
@@ -226,7 +222,6 @@ class ScanFragment : Fragment() {
         }
     }
 
-    // ── Observe events ────────────────────────────────────────────────────────
     private fun observeEvent() {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {

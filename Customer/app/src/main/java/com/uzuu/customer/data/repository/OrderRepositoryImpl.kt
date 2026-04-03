@@ -39,7 +39,6 @@ class OrderRepositoryImpl(
         }
 }
 
-// Extension nhỏ gọn để map DTO → Domain (dùng nội bộ file này)
 private fun com.uzuu.customer.data.remote.dto.response.OrderResponseDto.toDomain() = Order(
     id            = id,
     totalAmount   = totalAmount,

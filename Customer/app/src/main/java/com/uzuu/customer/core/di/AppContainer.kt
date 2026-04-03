@@ -28,8 +28,8 @@ class AppContainer(context: Context) {
     val categoryApi  = RetrofitProvider.categoryApi
     val cartApi      = RetrofitProvider.cartApi
     val userApi      = RetrofitProvider.userApi
-    val myTicketApi  = RetrofitProvider.myTicketApi   // ← thêm
-    val orderApi     = RetrofitProvider.orderApi      // ← thêm
+    val myTicketApi  = RetrofitProvider.myTicketApi
+    val orderApi     = RetrofitProvider.orderApi
 
     // ── Local ─────────────────────────────────────────────────────────────────
     val userLocal = UserDataLocalSource(db.userDao())
@@ -40,8 +40,8 @@ class AppContainer(context: Context) {
     val categoryRemote  = CategoryRemoteDataSource(categoryApi = categoryApi)
     val cartRemote      = CartRemoteDataSource(cartApi = cartApi)
     val userRemote      = UserRemoteDataSource(userApi = userApi)
-    val myTicketRemote  = MyTicketRemoteDataSource(myTicketApi = myTicketApi)   // ← thêm
-    val orderRemote     = OrderRemoteDataSource(orderApi = orderApi)             // ← thêm
+    val myTicketRemote  = MyTicketRemoteDataSource(myTicketApi = myTicketApi)
+    val orderRemote     = OrderRemoteDataSource(orderApi = orderApi)
 
     // ── Repositories ──────────────────────────────────────────────────────────
     val userRepo        = UserRepositoryImpl(userLocal, userRemote)
@@ -49,6 +49,6 @@ class AppContainer(context: Context) {
     val eventRepo       = EventRepositoryImpl(eventRemote)
     val categoryRepo    = CategoryRepositoryImpl(categoryRemote)
     val cartRepo        = CartRepositoryImpl(cartRemote)
-    val myTicketRepo    = MyTicketRepositoryImpl(myTicketRemote)   // ← thêm
-    val orderRepo       = OrderRepositoryImpl(orderRemote)        // ← thêm
+    val myTicketRepo    = MyTicketRepositoryImpl(myTicketRemote)
+    val orderRepo       = OrderRepositoryImpl(orderRemote)
 }

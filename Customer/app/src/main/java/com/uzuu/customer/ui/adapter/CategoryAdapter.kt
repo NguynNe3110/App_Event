@@ -1,7 +1,9 @@
 package com.uzuu.customer.ui.adapter
 
+import android.content.res.ColorStateList
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -35,17 +37,32 @@ class CategoryAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
+        val ctx  = holder.itemView.context
 
         holder.binding.tvNameCategory.text = item.name
 
-        // Highlight danh mục đang chọn
-        holder.binding.root.setBackgroundResource(
-            if (item.isSelected) R.drawable.bg_category_selected
-            else R.drawable.bg_category_item
-        )
-
-        holder.binding.root.setOnClickListener {
-            onClick(item)
+        if (item.isSelected) {
+            // Nền xanh đậm, chữ trắng
+            holder.binding.root.setCardBackgroundColor(
+                ContextCompat.getColor(ctx, R.color.blue_primary_400)
+            )
+            holder.binding.root.strokeColor =
+                ContextCompat.getColor(ctx, R.color.blue_primary_400)
+            holder.binding.tvNameCategory.setTextColor(
+                ContextCompat.getColor(ctx, android.R.color.white)
+            )
+        } else {
+            // Nền nhạt, chữ tối
+            holder.binding.root.setCardBackgroundColor(
+                ContextCompat.getColor(ctx, R.color.blue_surface_8)
+            )
+            holder.binding.root.strokeColor =
+                ContextCompat.getColor(ctx, R.color.blue_border_5)
+            holder.binding.tvNameCategory.setTextColor(
+                ContextCompat.getColor(ctx, R.color.blue_text_dark)
+            )
         }
+
+        holder.binding.root.setOnClickListener { onClick(item) }
     }
 }

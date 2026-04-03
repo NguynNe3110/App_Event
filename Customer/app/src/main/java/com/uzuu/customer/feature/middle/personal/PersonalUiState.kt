@@ -7,5 +7,5 @@ data class PersonalUiState(
     val email: String = "",
     val phone: String = "",
     val address: String = "",
-    val avatarUri: String? = null   // URI ảnh local (từ gallery)
+    val avatarUri: String? = null
 )

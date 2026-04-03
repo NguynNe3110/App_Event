@@ -23,12 +23,9 @@ class PersonalViewModel(
     private val _event = MutableSharedFlow<PersonalUiEvent>(extraBufferCapacity = 3)
     val event = _event.asSharedFlow()
 
-    // Gọi khi fragment start
     fun init() {
-        // Load avatar từ local storage ngay lập tức
         _state.update { it.copy(avatarUri = SessionManager.getAvatarUri()) }
 
-        // Load thông tin từ server
         viewModelScope.launch {
             _state.update { it.copy(isLoading = true) }
             when (val r = userRepo.getMyInfo()) {
@@ -56,7 +53,6 @@ class PersonalViewModel(
         }
     }
 
-    // Lưu avatar URI (từ gallery) vào SharedPreferences + state
     fun saveAvatarUri(uri: String) {
         SessionManager.saveAvatarUri(uri)
         _state.update { it.copy(avatarUri = uri) }

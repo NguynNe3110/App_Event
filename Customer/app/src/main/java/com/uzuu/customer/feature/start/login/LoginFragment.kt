@@ -93,6 +93,24 @@ class LoginFragment: Fragment() {
                                     .build()
                             )
                         }
+
+                        is LoginUiEvent.Error -> {
+                            binding.btnLoginNow.isEnabled = true
+                            binding.progress.visibility = View.GONE
+                            binding.btnLoginNow.text = "Đăng nhập"
+                        }
+
+                        is LoginUiEvent.Loading -> {
+                            binding.btnLoginNow.isEnabled = false
+                            binding.progress.visibility = View.VISIBLE
+                            binding.btnLoginNow.text = ""
+                        }
+
+                        is LoginUiEvent.Success -> {
+                            binding.btnLoginNow.isEnabled = true
+                            binding.progress.visibility = View.GONE
+                            binding.btnLoginNow.text = "Đăng nhập"
+                        }
                     }
                 }
             }

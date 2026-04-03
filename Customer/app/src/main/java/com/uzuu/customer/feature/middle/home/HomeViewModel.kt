@@ -127,7 +127,6 @@ class HomeViewModel(
         }
     }
 
-    // ── THÊM MỚI: tìm kiếm theo tên ─────────────────────────────────────────
     fun onSearch(query: String) {
         _homeState.update { state ->
             val filtered = filterByCategoryAndQuery(
@@ -140,7 +139,6 @@ class HomeViewModel(
         }
     }
 
-    // ── Helper: lọc kết hợp category + từ khóa ──────────────────────────────
     private fun filterByCategoryAndQuery(
         events: List<Event>,
         categoryId: Int,
@@ -149,7 +147,6 @@ class HomeViewModel(
     ): List<Event> {
         var result = events
 
-        // Lọc theo category
         if (categoryId != -1) {
             val selectedName = categories.find { it.id == categoryId }?.name
             if (selectedName != null) {
@@ -157,7 +154,6 @@ class HomeViewModel(
             }
         }
 
-        // Lọc theo tên sự kiện (case-insensitive)
         if (query.isNotBlank()) {
             result = result.filter {
                 it.name.contains(query.trim(), ignoreCase = true)

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:padding="16dp"
     android:orientation="vertical"
-    android:background="@color/blue_surface_3"
+    android:background="@color/blue_surface_2"
     android:layout_height="match_parent">
 
     <TextView
@@ -48,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mật khẩu"
+            app:passwordToggleEnabled="true"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -58,6 +59,8 @@
                 android:id="@+id/edt_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
                 tools:layout_editor_absoluteX="6dp"
                 tools:layout_editor_absoluteY="206dp" />
         </com.google.android.material.textfield.TextInputLayout>

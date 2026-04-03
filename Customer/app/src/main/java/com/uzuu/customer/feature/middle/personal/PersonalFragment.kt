@@ -70,7 +70,6 @@ class PersonalFragment : Fragment() {
             viewModel.onEditInfo()
         }
 
-        // ── Lịch sử đơn hàng ────────────────────────────────────────────────
         binding.rowHistory.setOnClickListener {
             findNavController().navigate(R.id.action_personal_to_history)
         }

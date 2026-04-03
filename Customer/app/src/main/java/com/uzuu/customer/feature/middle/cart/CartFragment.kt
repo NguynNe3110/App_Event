@@ -28,7 +28,7 @@ class CartFragment : Fragment() {
 
     private val viewModel: CartViewModel by viewModels {
         val cartRepo  = (requireActivity() as MainActivity).container.cartRepo
-        val orderRepo = (requireActivity() as MainActivity).container.orderRepo   // ← thêm
+        val orderRepo = (requireActivity() as MainActivity).container.orderRepo
         CartFactory(cartRepo, orderRepo)
     }
 
@@ -107,7 +107,6 @@ class CartFragment : Fragment() {
                             Toast.makeText(context, event.message, Toast.LENGTH_SHORT).show()
 
                         is CartUiEvent.CheckoutSuccess -> {
-                            // Server đã xoá cart sau checkout → reload để hiện empty state
                             viewModel.loadCart()
                         }
 

@@ -6,7 +6,6 @@
     android:background="@color/blue_bg_2"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Header: avatar + tên -->
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,7 +66,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="Have a good day! ☀️"
+                    android:text="Have a good day! "
                     android:textSize="13sp"
                     android:textColor="@color/blue_text_secondary"/>
             </LinearLayout>
@@ -80,7 +79,6 @@
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
-    <!-- Menu list -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -100,7 +98,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Chỉnh sửa thông tin -->
                 <LinearLayout
                     android:id="@+id/row_edit_info"
                     android:layout_width="match_parent"
@@ -116,7 +113,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="✏️  Chỉnh sửa thông tin"
+                        android:text="Chỉnh sửa thông tin"
                         android:textSize="15sp"/>
 
                     <TextView
@@ -130,7 +127,6 @@
                 <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="@color/blue_border_1"/>
 
-                <!-- Lịch sử đơn hàng ← ROW MỚI -->
                 <LinearLayout
                     android:id="@+id/row_history"
                     android:layout_width="match_parent"
@@ -146,7 +142,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="📋  Lịch sử đơn hàng"
+                        android:text="Lịch sử đơn hàng"
                         android:textSize="15sp"/>
 
                     <TextView
@@ -160,7 +156,6 @@
                 <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="@color/blue_border_1"/>
 
-                <!-- Giao diện (placeholder) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -172,25 +167,14 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="🎨  Giao diện"
+                        android:text="Giao diện"
                         android:textSize="15sp"
                         android:textColor="@color/blue_text_secondary"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sắp ra mắt"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue_primary_400"
-                        android:background="@drawable/bg_border_blue_square"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="2dp"/>
                 </LinearLayout>
 
                 <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="@color/blue_border_1"/>
 
-                <!-- Thông báo (placeholder) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -202,25 +186,14 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="🔔  Thông báo"
+                        android:text="Thông báo"
                         android:textSize="15sp"
                         android:textColor="@color/blue_text_secondary"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sắp ra mắt"
-                        android:textSize="12sp"
-                        android:textColor="@color/blue_primary_400"
-                        android:background="@drawable/bg_border_blue_square"
-                        android:paddingHorizontal="8dp"
-                        android:paddingVertical="2dp"/>
                 </LinearLayout>
 
                 <View android:layout_width="match_parent" android:layout_height="1dp"
                     android:background="@color/blue_border_1"/>
 
-                <!-- Trợ giúp -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
@@ -232,7 +205,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="wrap_content"
-                        android:text="❓  Trợ giúp"
+                        android:text="Trợ giúp"
                         android:textSize="15sp"
                         android:textColor="@color/blue_text_secondary"/>
                 </LinearLayout>
@@ -240,7 +213,6 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Logout -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
@@ -248,8 +220,8 @@
             android:layout_marginTop="20dp"
             android:text="Đăng xuất"
             android:textAllCaps="false"
-            android:textColor="@color/blue_primary_550"
-            app:strokeColor="@color/blue_primary_550"
+            android:textColor="#FF0000"
+            app:strokeColor="#FF0000"
             app:strokeWidth="1dp"
             app:cornerRadius="12dp"
             android:textSize="16sp"

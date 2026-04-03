@@ -17,7 +17,6 @@
         android:orientation="vertical"
         android:padding="14dp">
 
-        <!-- Tên sự kiện -->
         <TextView
             android:id="@+id/tv_event_name"
             android:layout_width="match_parent"
@@ -29,7 +28,6 @@
             android:maxLines="1"
             android:ellipsize="end"/>
 
-        <!-- Loại vé -->
         <TextView
             android:id="@+id/tv_ticket_type"
             android:layout_width="match_parent"
@@ -39,7 +37,6 @@
             android:textSize="14sp"
             android:textColor="@color/blue_text_secondary"/>
 
-        <!-- Giá × số lượng = tổng -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,7 +44,6 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
 
-            <!-- Đơn giá -->
             <TextView
                 android:id="@+id/tv_unit_price"
                 android:layout_width="0dp"
@@ -57,7 +53,6 @@
                 android:textSize="13sp"
                 android:textColor="@color/blue_text_primary"/>
 
-            <!-- Số lượng -->
             <TextView
                 android:id="@+id/tv_quantity"
                 android:layout_width="wrap_content"
@@ -68,7 +63,6 @@
                 android:layout_marginEnd="12dp"
                 android:textColor="@color/blue_primary_700"/>
 
-            <!-- Thành tiền -->
             <TextView
                 android:id="@+id/tv_subtotal"
                 android:layout_width="wrap_content"

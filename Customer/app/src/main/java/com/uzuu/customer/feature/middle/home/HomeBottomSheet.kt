@@ -61,10 +61,8 @@ class HomeBottomSheet(
     private fun setupButtons() {
         binding.handleBar.setOnClickListener { dismiss() }
 
-        // ── Xem chi tiết → navigate sang EventDetailFragment ────────────────
         binding.txtViewDetail.setOnClickListener {
             dismiss()
-            // Tìm navController từ fragment cha (HomeFragment nằm trong main_graph)
             val parentFragment = parentFragmentManager.fragments
                 .filterIsInstance<HomeFragment>()
                 .firstOrNull()
@@ -91,6 +89,7 @@ class HomeBottomSheet(
                     binding.btnAddToCart.isEnabled = true
                     if (hasError) {
                         Toast.makeText(context, "Có lỗi khi thêm vé, thử lại", Toast.LENGTH_SHORT).show()
+                        return@launch
                     } else {
                         val summary = selected.entries.joinToString(", ") { (id, qty) ->
                             val ticket = event.ticketTypes.find { it.id == id }
@@ -100,25 +99,6 @@ class HomeBottomSheet(
                         ticketAdapter.resetQuantities()
                         dismiss()
                     }
-                }
-            }
-        }
-
-        // ── Mua ngay ────────────────────────────────────────────────────────
-        binding.btnBuyNow.setOnClickListener {
-            val selected = ticketAdapter.getSelectedQuantities()
-            if (selected.isEmpty()) {
-                Toast.makeText(context, "Vui lòng chọn ít nhất 1 vé", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            binding.btnBuyNow.isEnabled = false
-            lifecycleScope.launch(Dispatchers.IO) {
-                selected.forEach { (ticketTypeId, qty) -> onAddToCart(ticketTypeId, qty) }
-                launch(Dispatchers.Main) {
-                    binding.btnBuyNow.isEnabled = true
-                    Toast.makeText(context, "Đã thêm vào giỏ – chuyển đến trang thanh toán", Toast.LENGTH_SHORT).show()
-                    dismiss()
                 }
             }
         }

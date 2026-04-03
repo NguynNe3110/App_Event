@@ -43,7 +43,6 @@ class TicketFragment : Fragment() {
         observeEvent()
     }
 
-    // Reload mỗi lần quay lại tab (vé có thể vừa được mua)
     override fun onResume() {
         super.onResume()
         viewModel.loadTickets()
@@ -51,7 +50,6 @@ class TicketFragment : Fragment() {
 
     private fun setupRecycler() {
         ticketAdapter = MyTicketAdapter { ticket ->
-            // Click vào vé → mở bottom sheet hiển thị chi tiết + QR
             if (parentFragmentManager.findFragmentByTag("ticket_detail") != null) return@MyTicketAdapter
             TicketDetailBottomSheet(ticket).show(parentFragmentManager, "ticket_detail")
         }

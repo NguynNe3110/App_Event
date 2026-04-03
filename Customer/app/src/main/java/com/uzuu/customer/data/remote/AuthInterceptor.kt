@@ -9,7 +9,6 @@ class AuthInterceptor : Interceptor {
         val request = chain.request()
         val token = SessionManager.getToken()
 
-        // THÊM DÒNG NÀY
         println("DEBUG [AuthInterceptor] token = $token | url = ${request.url}")
 
         val newRequest = if (token != null) {

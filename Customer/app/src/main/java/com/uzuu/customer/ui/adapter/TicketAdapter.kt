@@ -42,10 +42,6 @@ class TicketAdapter(
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item = getItem(position)
 
-        // Ví dụ binding
-//        holder.binding.txtStartDay.text = format(item.startTime)
-//        holder.binding.txtEndDay.text = format(item.endTime)
-
         holder.binding.root.setOnClickListener {
             onClick(item)
         }
