@@ -3,9 +3,11 @@ package com.uzuu.customer.feature.middle.personal
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uzuu.customer.core.result.ApiResult
+import com.uzuu.customer.data.mapper.userDtoToDomain
 import com.uzuu.customer.data.remote.dto.request.UserRequestDto
 import com.uzuu.customer.data.session.SessionManager
 import com.uzuu.customer.domain.repository.UserRepository
+import com.uzuu.customer.feature.middle.personal.personalInfo.PersonalUiState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -31,17 +33,22 @@ class PersonalViewModel(
             when (val r = userRepo.getMyInfo()) {
                 is ApiResult.Success -> {
                     val u = r.data
+                    userRepo.updateUser(u.userDtoToDomain())
+
+                    val data = userRepo.getUserByUsername(u.username)
                     println("DEBUG[PersonalViewModel] du lieu server trả về $u")
+                    println("DEBUG[PersonalViewModel] du lieu da luu $data")
+
                     // Lưu username để dùng khi update
                     SessionManager.saveUsername(u.username)
                     _state.update {
                         it.copy(
                             isLoading = false,
-                            username  = u.username,
-                            fullName  = u.fullName,
-                            email     = u.email,
-                            phone     = u.phone,
-                            address   = u.address
+                            username  = data.username,
+                            fullName  = data.fullName,
+                            email     = data.email,
+                            phone     = data.phoneNumber,
+                            address   = data.address
                         )
                     }
                 }

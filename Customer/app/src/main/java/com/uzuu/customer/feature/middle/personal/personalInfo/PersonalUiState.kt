@@ -1,4 +1,4 @@
-package com.uzuu.customer.feature.middle.personal
+package com.uzuu.customer.feature.middle.personal.personalInfo
 
 data class PersonalUiState(
     val isLoading: Boolean = false,

@@ -27,24 +27,13 @@ interface UsersDao {
     @Query("delete from users where username = :username")
     suspend fun deleteUserByUsername(username: String): Int
 
-    @Query("select * from users where id = :id limit 1")
-    suspend fun getUserById(id: Int) : UsersEntity?
-
-    //
-    @Query("delete from users")
-    suspend fun deleteAllUser(): Int
+    @Query("select * from users where username = :username limit 1")
+    suspend fun getUserByUsername(username: String) : UsersEntity
 
     //
     @Query("select exists(select 1 from users where id = :id)")
     suspend fun checkUserExists(id: Int): Boolean
 
-    //
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun InsertAllUser(users : List<UsersEntity>)
-
     @Query("SELECT EXISTS(SELECT 1 FROM users WHERE username = :username)")
     suspend fun isUserExist(username: String): Boolean
-
-    @Query("SELECT * FROM users WHERE username = :username AND password = :password LIMIT 1")
-    suspend fun login(username: String, password: String): UsersEntity?
 }

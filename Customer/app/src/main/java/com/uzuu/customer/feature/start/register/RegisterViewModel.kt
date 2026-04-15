@@ -57,7 +57,10 @@ class RegisterViewModel(
                     _registerState.update { it.copy(isLoading = false) }
                     _registerEvent.emit(RegisterUiEvent.Success)
                     _registerEvent.emit(RegisterUiEvent.Toast("Đăng kí thành công!"))
-                    println("DEBUG in third register(VM):d")
+
+                    //add
+                    userRepo.createUser(Users(0, user, email, disp, phone, add))
+                    println("DEBUG in third register(VM) insert room success")
 
                     _registerEvent.emit(RegisterUiEvent.Toast("Đã tự động chuyển hướng!"))
                     delay(300)

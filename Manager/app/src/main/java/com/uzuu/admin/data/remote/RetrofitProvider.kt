@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitProvider {
 
-    private const val BASE_URL = "http://192.168.0.110:8080/event-mng/"
+    private const val BASE_URL = "https://be-event-mng-v2.onrender.com/event-mng/"
 
     private val client: OkHttpClient by lazy {
         val logger = HttpLoggingInterceptor().apply {

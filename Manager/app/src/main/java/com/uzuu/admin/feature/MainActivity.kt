@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             val navHostFragment =
                 supportFragmentManager.findFragmentById(R.id.root_nav_host) as NavHostFragment
             navHostFragment.navController.navigate(
-                R.id.scanFragment,          // ② fix: mainFragment không tồn tại
+                R.id.scanFragment,
                 null,
                 NavOptions.Builder()
                     .setPopUpTo(R.id.root_graph, true)

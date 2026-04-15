@@ -22,7 +22,7 @@ interface UserRepository {
 
     suspend fun deleteUserById(id: Int): Int
 
-    suspend fun getUserById(id: Int): Users
+    suspend fun getUserByUsername(username: String): Users
 
     suspend fun isUserExist(username: String): Boolean
 }

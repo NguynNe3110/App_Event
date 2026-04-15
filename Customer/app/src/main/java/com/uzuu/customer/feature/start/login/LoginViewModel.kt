@@ -3,8 +3,10 @@ package com.uzuu.customer.feature.start.login
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.uzuu.customer.core.result.ApiResult
+import com.uzuu.customer.data.mapper.userDtoToDomain
 import com.uzuu.customer.data.session.SessionManager
 import com.uzuu.customer.domain.model.Login
+import com.uzuu.customer.domain.model.Users
 import com.uzuu.customer.domain.repository.AuthRepository
 import com.uzuu.customer.domain.repository.UserRepository
 import kotlinx.coroutines.delay
@@ -58,6 +60,12 @@ class LoginViewModel(
                     SessionManager.saveToken(token)
                     SessionManager.saveUsername(user)   // ← lưu username
                     println("DEBUG [LoginVM] saved token + username=$user")
+
+                    val us = userRepo.getMyInfo()
+                    if (us is ApiResult.Success) {
+                        val data1 = userRepo.createUser(us.data.userDtoToDomain())
+                        println("DEBUG in [LoginViewmodel] insert room db success: $data1")
+                    }
 
                     _loginState.update { it.copy(isLoading = false) }
                     _loginEvent.tryEmit(LoginUiEvent.Success)

@@ -3,7 +3,9 @@ package com.uzuu.customer.data.repository
 import com.uzuu.customer.core.result.ApiResult
 import com.uzuu.customer.core.result.safeApiCall
 import com.uzuu.customer.data.local.datasource.UserDataLocalSource
-import com.uzuu.customer.data.mapper.userdomainToDto
+import com.uzuu.customer.data.mapper.userEntityToDomain
+import com.uzuu.customer.data.mapper.userdomainToEntity
+import com.uzuu.customer.data.mapper.userdomainToEntity
 import com.uzuu.customer.data.remote.datasource.UserRemoteDataSource
 import com.uzuu.customer.data.remote.dto.request.UserRequestDto
 import com.uzuu.customer.data.remote.dto.response.UserResponseDto
@@ -43,15 +45,15 @@ class UserRepositoryImpl(
         get() = TODO("Not yet implemented")
 
     override suspend fun createUser(user: Users): Long {
-        return userLocal.createUser(user.userdomainToDto())
+        return userLocal.createUser(user.userdomainToEntity(null))
     }
 
     override suspend fun updateUser(user: Users): Int {
-        TODO("Not yet implemented")
+        return userLocal.updateUser(user.userdomainToEntity(null))
     }
 
-    override suspend fun getUserById(id: Int): Users {
-        TODO("Not yet implemented")
+    override suspend fun getUserByUsername(username: String): Users {
+        return userLocal.getUserByUsername(username).userEntityToDomain()
     }
 
     override suspend fun deleteUserById(id: Int): Int {

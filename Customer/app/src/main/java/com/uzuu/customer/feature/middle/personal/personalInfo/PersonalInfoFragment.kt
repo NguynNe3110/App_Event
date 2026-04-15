@@ -1,4 +1,4 @@
-package com.uzuu.customer.feature.middle.personal
+package com.uzuu.customer.feature.middle.personal.personalInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +13,9 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.uzuu.customer.databinding.FragmentPersonalInfoBinding
 import com.uzuu.customer.feature.MainActivity
+import com.uzuu.customer.feature.middle.personal.PersonalFactory
+import com.uzuu.customer.feature.middle.personal.PersonalUiEvent
+import com.uzuu.customer.feature.middle.personal.PersonalViewModel
 import kotlinx.coroutines.launch
 
 class PersonalInfoFragment : Fragment() {
@@ -38,6 +41,8 @@ class PersonalInfoFragment : Fragment() {
         setupSaveButton()
         observeState()
         observeEvent()
+
+        binding.btnBack.setOnClickListener { findNavController().popBackStack() }
     }
 
     private fun setupSaveButton() {

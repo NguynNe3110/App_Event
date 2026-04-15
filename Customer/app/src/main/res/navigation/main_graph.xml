@@ -41,7 +41,7 @@
 
     <fragment
         android:id="@+id/personalInfoFragment"
-        android:name="com.uzuu.customer.feature.middle.personal.PersonalInfoFragment"
+        android:name="com.uzuu.customer.feature.middle.personal.personalInfo.PersonalInfoFragment"
         android:label="Chỉnh sửa thông tin"/>
 
     <fragment

@@ -21,15 +21,11 @@ class UserDataLocalSource(
         return usersDao.deleteUserById(id)
     }
 
-    suspend fun getUserById(id: Int) : UsersEntity? {
-        return usersDao.getUserById(id)
+    suspend fun getUserByUsername(username: String) : UsersEntity {
+        return usersDao.getUserByUsername(username)
     }
 
     suspend fun isUserExist(username: String): Boolean {
         return usersDao.isUserExist(username)
-    }
-
-    suspend fun login(username: String, password: String): UsersEntity? {
-        return usersDao.login(username, password)
     }
 }
