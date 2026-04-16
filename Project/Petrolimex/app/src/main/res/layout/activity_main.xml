@@ -1,0 +1,224 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dữ liệu được cập nhật vào: "/>
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Null"/>
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_gravity="center_vertical"
+        app:cardElevation="6dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:weightSum="3"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:text="Loại"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:text="Khu vực 1"/>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:text="Khu vực 2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_ron95v"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="RON 95-V"/>
+
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron95iii"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="RON 95-III"/>
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron92"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="E5 RON 92-II"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_ron95v_price1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Null"/>
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron95iii_price1"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:text="Null"/>
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron92_price1"
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="Null"/>
+                </LinearLayout>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="6dp"/>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/txt_ron95v_price2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="Null"/>
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron95iii_price2"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:textSize="18dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:text="Null"/>
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="6dp"/>
+                    <TextView
+                        android:id="@+id/txt_ron92_price2"
+
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+                        android:text="Null"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_sync"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sync dữ liệu"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:backgroundTint="#00C4FF"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"/>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:visibility="gone"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khu vực 2 bao gồm: Hà Giang, Cao Bằng, Lạng Sơn, Bắc Kạn, Lào Cai, Yên Bái, Tuyên Quang, Điện Biên, Lai Châu, Sơn La, Hòa Bình, Lâm Đồng, Gia Lai, Kon Tum, Đắc Nông, Đắc Lắc, Thái nguyên, Bắc Giang, Phú Thị, Vĩnh Phúc, Bắc Ninh, Thái Bình, Nam Định, Hà Nam, Ninh Bình, Thanh Hóa, Nghệ An, Hà Tĩnh, Quảng Bình, Quảng Nam, Bình Định, Phú Yên, Khánh Hòa, Ninh Thuận, Bình Phước, An Giang, Bạc Liêu, Cà Mau, Quảng Trị, Thừa Thiên Huế, Bình Thuận, Đồng Tháp, Sóc Trăng, Hậu Giang"
+    />
+</LinearLayout>

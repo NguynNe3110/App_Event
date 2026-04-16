@@ -1,0 +1,462 @@
+server /event-mng
+code 200 : ok
+=========================================================================================
+GET /events/{id} xem thông tin chi tiết sự kiện
+parameters
+
+name : id (integer($int64)) path *required
+description : id
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "totalPages": 1073741824,
+    "totalElements": 9007199254740991,
+    "first": true,
+    "last": true,
+    "pageable": {
+      "pageSize": 1073741824,
+      "paged": true,
+      "pageNumber": 1073741824,
+      "offset": 9007199254740991,
+      "sort": {
+        "sorted": true,
+        "empty": true,
+        "unsorted": true
+      },
+      "unpaged": true
+    },
+    "size": 1073741824,
+    "content": [
+      {
+        "id": 9007199254740991,
+        "name": "string",
+        "categoryName": "string",
+        "organizerName": "string",
+        "location": "string",
+        "startTime": "2026-03-19T18:03:46.426Z",
+        "endTime": "2026-03-19T18:03:46.426Z",
+        "saleStartDate": "2026-03-19T18:03:46.426Z",
+        "saleEndDate": "2026-03-19T18:03:46.426Z",
+        "description": "string",
+        "status": "PENDING",
+        "imageUrls": [
+          "string"
+        ],
+        "ticketTypes": [
+          {
+            "id": 9007199254740991,
+            "name": "string",
+            "price": 0,
+            "totalQuantity": 1073741824,
+            "remainingQuantity": 1073741824,
+            "description": "string"
+          }
+        ],
+        "createdAt": "2026-03-19T18:03:46.426Z",
+        "updatedAt": "2026-03-19T18:03:46.426Z"
+      }
+    ],
+    "number": 1073741824,
+    "sort": {
+      "sorted": true,
+      "empty": true,
+      "unsorted": true
+    },
+    "numberOfElements": 1073741824,
+    "empty": true
+  }
+}
+=========================================================================================
+GET /events Lấy danh sách sự kiện
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "totalPages": 1073741824,
+    "totalElements": 9007199254740991,
+    "first": true,
+    "last": true,
+    "pageable": {
+      "pageSize": 1073741824,
+      "paged": true,
+      "pageNumber": 1073741824,
+      "offset": 9007199254740991,
+      "sort": {
+        "sorted": true,
+        "empty": true,
+        "unsorted": true
+      },
+      "unpaged": true
+    },
+    "size": 1073741824,
+    "content": [
+      {
+        "id": 9007199254740991,
+        "name": "string",
+        "categoryName": "string",
+        "organizerName": "string",
+        "location": "string",
+        "startTime": "2026-03-19T18:09:17.363Z",
+        "endTime": "2026-03-19T18:09:17.363Z",
+        "saleStartDate": "2026-03-19T18:09:17.363Z",
+        "saleEndDate": "2026-03-19T18:09:17.363Z",
+        "description": "string",
+        "status": "PENDING",
+        "imageUrls": [
+          "string"
+        ],
+        "ticketTypes": [
+          {
+            "id": 9007199254740991,
+            "name": "string",
+            "price": 0,
+            "totalQuantity": 1073741824,
+            "remainingQuantity": 1073741824,
+            "description": "string"
+          }
+        ],
+        "createdAt": "2026-03-19T18:09:17.363Z",
+        "updatedAt": "2026-03-19T18:09:17.363Z"
+      }
+    ],
+    "number": 1073741824,
+    "sort": {
+      "sorted": true,
+      "empty": true,
+      "unsorted": true
+    },
+    "numberOfElements": 1073741824,
+    "empty": true
+  }
+}
+===============================================================================
+POST /cart/add Thêm vé vào giỏ hàng
+request body
+{
+  "ticketTypeId": 9007199254740991,
+  "quantity": 1073741824
+}
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "items": [
+      {
+        "id": 9007199254740991,
+        "ticketTypeId": 9007199254740991,
+        "ticketTypeName": "string",
+        "eventName": "string",
+        "quantity": 1073741824,
+        "unitPrice": 0,
+        "subtotal": 0
+      }
+    ],
+    "totalAmount": 0
+  }
+}
+==============================================================================
+GET /cart xem giỏ hàng của tôi
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "items": [
+      {
+        "id": 9007199254740991,
+        "ticketTypeId": 9007199254740991,
+        "ticketTypeName": "string",
+        "eventName": "string",
+        "quantity": 1073741824,
+        "unitPrice": 0,
+        "subtotal": 0
+      }
+    ],
+    "totalAmount": 0
+  }
+}
+
+==============================================================================
+DELETE /cart/clear Xóa toàn bộ giỏ hàng
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {}
+}
+===============================================================================
+POST /orders/checkout  Thanh toán giỏ hàng
+
+parameters
+name : paymentMethod (string) query
+description : Available values: MOMO, VNPAY, BANKING
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "totalAmount": 0,
+    "paymentMethod": "MOMO",
+    "paymentStatus": "PENDING",
+    "orderStatus": "PENDING",
+    "orderDate": "2026-03-19T18:26:50.944Z"
+  }
+}
+================================================================================
+GET /orders Xem lịch sử đơn hàng của tôi
+response
+
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "totalPages": 1073741824,
+    "totalElements": 9007199254740991,
+    "first": true,
+    "last": true,
+    "pageable": {
+      "pageSize": 1073741824,
+      "paged": true,
+      "pageNumber": 1073741824,
+      "offset": 9007199254740991,
+      "sort": {
+        "sorted": true,
+        "empty": true,
+        "unsorted": true
+      },
+      "unpaged": true
+    },
+    "size": 1073741824,
+    "content": [
+      {
+        "id": 9007199254740991,
+        "totalAmount": 0,
+        "paymentMethod": "MOMO",
+        "paymentStatus": "PENDING",
+        "orderStatus": "PENDING",
+        "orderDate": "2026-03-19T18:30:55.234Z"
+      }
+    ],
+    "number": 1073741824,
+    "sort": {
+      "sorted": true,
+      "empty": true,
+      "unsorted": true
+    },
+    "numberOfElements": 1073741824,
+    "empty": true
+  }
+}
+================================================================================
+PUT /users/{username} Cập nhật người dùng
+parametter
+name: username: string *required
+description : username
+
+request body *required
+{
+  "password": "string",
+  "email": "string",
+  "fullName": "string",
+  "phone": "9103137245",
+  "address": "string"
+}
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "username": "string",
+    "email": "string",
+    "fullName": "string",
+    "phone": "string",
+    "address": "string",
+    "role": "ADMIN"
+  }
+
+================================================================================
+GET /users/my-info  lấy thông tin của chính mình
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "username": "string",
+    "email": "string",
+    "fullName": "string",
+    "phone": "string",
+    "address": "string",
+    "role": "ADMIN"
+  }
+}
+================================================================================
+GET /tickets/my-tickets  xem danh sách vé đã mua
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": [
+    {
+      "id": 9007199254740991,
+      "eventName": "string",
+      "ticketTypeName": "string",
+      "ticketCode": "string",
+      "qrCode": "string",
+      "status": "VALID",
+      "usedAt": "2026-03-19T21:16:21.005Z"
+    }
+  ]
+}
+==============================================================================
+POST /tickets/check-in  quét mã vé để check-in (ban tổ chức/ admin)
+parameters
+name: ticketCode (string) query
+description: ticketCode
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "eventName": "string",
+    "ticketTypeName": "string",
+    "ticketCode": "string",
+    "qrCode": "string",
+    "status": "VALID",
+    "usedAt": "2026-03-20T10:04:38.841Z"
+  }
+}
+
+==============================================================================
+PUT /cart/items/{itemId} cập nhật số lượng vé trong giỏ hàng
+parameters
+name: itemId (integer$int64) *required
+description: itemId
+
+name quantity (integer$int32) *required
+description: quantity
+
+reponse
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "items": [
+      {
+        "id": 9007199254740991,
+        "ticketTypeId": 9007199254740991,
+        "ticketTypeName": "string",
+        "eventName": "string",
+        "quantity": 1073741824,
+        "unitPrice": 0,
+        "subtotal": 0
+      }
+    ],
+    "totalAmount": 0
+  }
+}
+==============================================================================
+DELETE /cart/items/{itemId} xóa vé khỏi giỏ hàng
+parameters
+name: itemId (integer$64) *required
+description: itemId
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "items": [
+      {
+        "id": 9007199254740991,
+        "ticketTypeId": 9007199254740991,
+        "ticketTypeName": "string",
+        "eventName": "string",
+        "quantity": 1073741824,
+        "unitPrice": 0,
+        "subtotal": 0
+      }
+    ],
+    "totalAmount": 0
+  }
+}
+==============================================================================
+POST  /orders/checkout-selected  Thanh toán các mục được chọn trong giỏ hàng
+parameters
+name : paymentMethod (string) query
+description : Available values: MOMO, VNPAY, BANKING
+
+request body required
+example value 
+[9007199254740991]
+schema
+collapse all array<integer>
+items integer int64
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": {
+    "id": 9007199254740991,
+    "organizerAmount": 0,
+    "platformFeeRate": 0.1,
+    "serviceFee": 0,
+    "totalAmount": 0,
+    "paymentMethod": "MOMO",
+    "paymentStatus": "PENDING",
+    "orderStatus": "PENDING",
+    "orderDate": "2026-04-03T12:03:28.469Z"
+  }
+}
+==============================================================================
+POST /auth/reset-password đặt lại mật khẩu với mã OTP
+pparameters 
+request body *required
+{
+  "email": "string",
+  "otp": "string",
+  "newPassword": "string"
+}
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": "string"
+}
+==============================================================================
+POST /auth/forgot-password  Yêu cầu mã OTP lấy lại mật khẩu
+
+request body *required
+{
+  "email": "string",
+}
+
+response
+{
+  "code": 1073741824,
+  "message": "string",
+  "result": "string"
+}
+
+GET /auth/verify xác thực email
+parameters 
+name: token (string) *required
+desciption: token
